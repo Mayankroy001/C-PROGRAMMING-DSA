@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "ARRAY.C": "cpp"
+        "ARRAY.C": "cpp",
+        "2D ARRAY.C": "cpp"
     }
 }
