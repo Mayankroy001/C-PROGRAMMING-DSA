@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "ARRAY.C": "cpp",
-        "2D ARRAY.C": "cpp"
+        "2D ARRAY.C": "cpp",
+        "ARRAY1ST.C": "cpp",
+        "FUNCTION.C": "cpp"
     }
 }
