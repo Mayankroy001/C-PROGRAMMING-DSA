@@ -28,12 +28,27 @@ int pop()
     return data;
 }
 
+void print_stack()
+{
+    if (top == -1)
+    {
+        printf("Stack is empty.\n");
+        return;
+    }
+    printf("Stack elements: ");
+    for (int i = 0; i <= top; i++)
+    {
+        printf("%d ", stack_ar[i]);
+    }
+    printf("\n");
+}
+
 int main()
 {
     int choice, value;
     while (1)
     {
-        printf("\n1. Push\n2. Pop\n3. Exit\n");
+        printf("\n1. Push\n2. Pop\n3. Print Stack\n4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
         
@@ -52,6 +67,9 @@ int main()
                 }
                 break;
             case 3:
+                print_stack();
+                break;
+            case 4:
                 exit(0);
             default:
                 printf("Invalid choice. Please try again.\n");
