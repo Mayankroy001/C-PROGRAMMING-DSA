@@ -2,12 +2,16 @@
 #include<stdlib.h>
 
 int main(){
+
     int*ptr;
-    ptr=(int*)calloc(6, sizeof(int));
+    ptr=(int*)calloc(6,sizeof(int));
     if(ptr==NULL){
-        printf("Memory not allocated\n");
+        printf("Memory not allocated suucessfully\n");
     }else{
-        printf("Memory allocated\n");
+        printf("Memory allocted successfully\n");
     }
-return 0;
+free(ptr);
+printf("memory freed successfully\n");
+    return 0;
 }
+
