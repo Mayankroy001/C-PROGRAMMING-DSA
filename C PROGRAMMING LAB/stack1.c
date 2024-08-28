@@ -23,5 +23,5 @@ int stack_arr[MAX];
       push(2);
         push(3);
          push(4);
-        
+        return 0;
  }
