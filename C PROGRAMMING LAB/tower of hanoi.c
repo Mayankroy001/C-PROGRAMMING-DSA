@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Function to solve Tower of Hanoi problem
+
 void TowerOfHanoi(int n, char source, char auxiliary, char destination) {
     if (n == 1) {
         printf("Move disk 1 from %c to %c\n", source, destination);
