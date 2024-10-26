@@ -1,61 +1,45 @@
 #include<stdio.h>
 
-// Function to display the array elements
 void display(int arr[], int n) {
-    for(int i = 0; i < n; i++) {
-        printf("Traversal element %d: %d\n", i+1, arr[i]);
+    for (int i = 0; i < n; i++) {
+        printf("Element %d: %d\n", i + 1, arr[i]);
     }
-}
-
-// Function to insert an element at a specified index in the array
-int indinsertion(int arr[], int size, int index, int element, int capacity) {
-    if(size >= capacity) {
-        return -1;  // If array is full, insertion is not possible
-    }
-
-    // Shifting elements to the right
-    for(int i = size - 1; i >= index; i--) {
-        arr[i + 1] = arr[i];
-    }
-
-    // Inserting the element at the desired index
-    arr[index] = element;
-    return size + 1;  // Return the new size of the array
 }
 
 int main() {
-    int arr[100];  // Declaring an array with capacity 100
-    int size, index, element, capacity = 100, n;
+   
+   //here i is for loop;
+    // n is for number of elements;
+    // a[i] is for the print arrray;
+    // pos is for positioning;
+    // Elements is for the number i want to insert in the given array;
+    
+    int a[100], i, n, pos, element;
 
-    // Taking input for the initial size of the array
-    printf("Enter the size of the array: ");
-    scanf("%d", &size);
+    printf("Enter the size of array: ");
+    scanf("%d", &n);
 
-    // Taking input for the array elements
-    printf("Enter the elements of the array:\n");
-    for(int i = 0; i < size; i++) {
-        scanf("%d", &arr[i]);
+    for (i = 0; i < n; i++) {
+        printf("Insert element %d: ", i + 1);
+        scanf("%d", &a[i]);
     }
 
-    // Display the current array
-    display(arr, size);
+    printf("Enter the position and element you want to add: ");
+    scanf("%d%d", &pos, &element);
 
-    // Taking input for the index and the element to be inserted
-    printf("Enter the position (index) where you want to insert an element: ");
-    scanf("%d", &index);
+    // Increase array size for the new element
+    n++;
 
-    printf("Enter the element to insert: ");
-    scanf("%d", &element);
-
-    // Calling the insertion function
-    int newSize = indinsertion(arr, size, index, element, capacity);
-
-    if(newSize == -1) {
-        printf("Array is full, cannot insert element.\n");
-    } else {
-        printf("Array after insertion:\n");
-        display(arr, newSize);
+    // Shift elements forward to make space for the new element
+    for (i = n - 1; i >= pos; i--) {
+        a[i] = a[i - 1];
     }
+
+    // Insert the new element at the specified position
+    a[pos - 1] = element;
+
+    // Display the updated array
+    display(a, n);
 
     return 0;
 }
